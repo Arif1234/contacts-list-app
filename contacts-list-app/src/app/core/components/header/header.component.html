@@ -7,7 +7,13 @@
   
       <span class="example-fill-remaining-space"></span>
   
-      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" (change)="onChange($event)">
+      <mat-button-toggle-group
+        appearance="legacy"
+        name="fontStyle"
+        value="index"
+        aria-label="Font Style"
+        (change)="onChange($event)"
+      >
         <mat-button-toggle value="index">
           <i class="fa fa-list-ul" aria-hidden="true"></i> Index
         </mat-button-toggle>

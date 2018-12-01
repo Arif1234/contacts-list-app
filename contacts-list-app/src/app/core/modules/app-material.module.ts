@@ -1,6 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatButtonToggleModule } from '@angular/material';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import {
+  MatToolbarModule,
+  MatButtonToggleModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -8,8 +20,17 @@ import { MatToolbarModule, MatButtonToggleModule } from '@angular/material';
     CommonModule
   ],
   exports: [
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
     MatToolbarModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTableModule,
+    ScrollingModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule
   ]
 })
 export class AppMaterialModule { }

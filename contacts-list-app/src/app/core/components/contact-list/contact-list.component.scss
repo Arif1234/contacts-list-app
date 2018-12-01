@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+
+    th {
+        font-weight: bold;
+    }
+
+    ::ng-deep .mat-button {
+        margin: 0 5px;
+    }
+
+    .blue {
+        border-color: blue;
+    }
+
+    .yellow {
+        border-color: yellow;
+    }
+
+    .red {
+        border-color: red;
+    }
+}
