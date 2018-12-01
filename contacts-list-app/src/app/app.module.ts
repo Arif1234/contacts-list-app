@@ -4,8 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // User defined modules.
-import { SharedModule } from './core/modules/shared.module';
-import { AppMaterialModule } from './core/modules/app-material.module';
+import { SharedModule } from '@modules/shared.module';
+import { AppMaterialModule } from '@modules/app-material.module';
 
 // User defined components.
 import { AppComponent } from './app.component';
