@@ -1,13 +1,19 @@
 <header>
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span class="header-text"><i class="fa fa-medkit" aria-hidden="true"></i> Evolent Health - Contact List App</span>
+      <span class="header-text">
+        <i class="fa fa-medkit" aria-hidden="true"></i> Evolent Health - <i>Contact List App</i>
+      </span>
   
       <span class="example-fill-remaining-space"></span>
   
-      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="bold"><i class="fa fa-list-ul" aria-hidden="true"></i> Index</mat-button-toggle>
-        <mat-button-toggle value="italic"><i class="fa fa-plus-square" aria-hidden="true"></i> New</mat-button-toggle>
+      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" (change)="onChange($event)">
+        <mat-button-toggle value="index">
+          <i class="fa fa-list-ul" aria-hidden="true"></i> Index
+        </mat-button-toggle>
+        <mat-button-toggle value="new">
+          <i class="fa fa-plus-square" aria-hidden="true"></i> New
+        </mat-button-toggle>
       </mat-button-toggle-group>
     </mat-toolbar-row>
   </mat-toolbar>
