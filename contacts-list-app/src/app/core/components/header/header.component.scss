@@ -1,0 +1,13 @@
+header {
+    .header-text {
+        padding-right: 25px;
+    }
+
+    ::ng-deep .mat-button-toggle {
+        color: white;
+    }
+
+    .mat-button-toggle-checked {
+        color: black;
+    }
+}
