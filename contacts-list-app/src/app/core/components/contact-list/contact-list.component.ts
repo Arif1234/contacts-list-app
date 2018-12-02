@@ -1,24 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Contact } from '@models/contact.interface';
-
-const ELEMENT_DATA: Contact[] = [
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-  { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'}
-];
 
 @Component({
   selector: 'app-contact-list',
@@ -26,16 +8,28 @@ const ELEMENT_DATA: Contact[] = [
   styleUrls: ['./contact-list.component.scss']
 })
 export class ContactListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'phoneNumber', 'status', 'buttons'];
-  dataSource = new MatTableDataSource<Contact>(ELEMENT_DATA);
-
+  private _data;
+  public dataSource;
+  displayedColumns: string[];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  // Added GETTER and SETTER here for change detection.
+  get data(): Contact[] {
+    return this._data;
+  }
+
+  @Input()
+  set data(data: Contact[]) {
+    this._data = data;
+  }
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource<Contact>(this._data);
+    this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'phoneNumber', 'status', 'buttons'];
     // setTimeout(() => this.dataSource.paginator = this.paginator);
     // this.dataSource.paginator = this.paginator;
   }
-
 }
