@@ -1,19 +1,19 @@
 import { Contact } from '@models/contact.interface';
 
 export const CONTACTS_DATA: Contact[] = [
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Active'},
-    { id: 23, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 121212121, status: 'Inactive'}
+    { id: 21, firstName: 'John', lastName: 'Arthur', email: 'john@gmail.com', phoneNumber: 1234567890, status: 'Active'},
+    { id: 22, firstName: 'Peter', lastName: 'Parker', email: 'peter@gmail.com', phoneNumber: 1234567891, status: 'Inactive'},
+    { id: 23, firstName: 'Bruce', lastName: 'Willis', email: 'bruce@gmail.com', phoneNumber: 1234567892, status: 'Active'},
+    { id: 24, firstName: 'John', lastName: 'Abrahm', email: 'abrahm@gmail.com', phoneNumber: 1234567893, status: 'Inactive'},
+    { id: 25, firstName: 'Brad', lastName: 'Pitt', email: 'brad@gmail.com', phoneNumber: 1234567894, status: 'Active'},
+    { id: 26, firstName: 'Russell', lastName: 'Crowe', email: 'john@gmail.com', phoneNumber: 1234567895, status: 'Inactive'},
+    { id: 27, firstName: 'Tom', lastName: 'Hanks', email: 'crowe@gmail.com', phoneNumber: 1234567896, status: 'Active'},
+    { id: 28, firstName: 'Peter', lastName: 'Dinklage', email: 'peter@gmail.com', phoneNumber: 1234567897, status: 'Inactive'},
+    { id: 29, firstName: 'Will', lastName: 'Smiith', email: 'will@gmail.com', phoneNumber: 1234567898, status: 'Active'},
+    { id: 30, firstName: 'John', lastName: 'Cena', email: 'cena@gmail.com', phoneNumber: 1234567899, status: 'Inactive'},
+    { id: 31, firstName: 'Amir', lastName: 'Khan', email: 'khan@gmail.com', phoneNumber: 1234567100, status: 'Inactive'},
+    { id: 32, firstName: 'Smith', lastName: 'Jones', email: 'smith@gmail.com', phoneNumber: 1234567120, status: 'Active'},
+    { id: 33, firstName: 'Sachin', lastName: 'Tendulkar', email: 'sachin@gmail.com', phoneNumber: 1234567830, status: 'Inactive'},
+    { id: 34, firstName: 'Mahi', lastName: 'Dhoni', email: 'mahi@gmail.com', phoneNumber: 1234567320, status: 'Active'},
+    { id: 35, firstName: 'Virat', lastName: 'Kohli', email: 'virat@gmail.com', phoneNumber: 1234567240, status: 'Inactive'}
 ];

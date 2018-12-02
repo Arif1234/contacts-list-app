@@ -18,7 +18,11 @@ export class ContactsIndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.contactsService.getContacts().subscribe(data => this.contactsData = data);
+    this.getData();
+  }
+
+  public getData() {
+    this.contactsService.getContactDetails().subscribe(data => this.contactsData = data);
   }
 
   editContact(contact: Contact) {
