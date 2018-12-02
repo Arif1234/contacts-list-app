@@ -1,28 +1,42 @@
 <mat-card>
   <mat-card-title>Enter Contact Details</mat-card-title>
   <mat-card-content>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="First Name">
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Last Name">
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Email">
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Phone Number">
-      </mat-form-field>
-    </div>
-    <div>
-      <button mat-button mat-raised-button color="primary">Submit</button>
-    </div>
+    <form [formGroup]="newContactForm" (ngSubmit)="onSubmit(newContactForm)">
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="fname" placeholder="First Name*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.get('fname').hasError('required')">
+          Please provide first name !!!
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="lname" placeholder="Last Name*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.get('lname').hasError('required')">
+          Please provide last name !!!
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.controls.email.hasError('pattern')">
+          Oops, wrong pattern buddy !
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="phoneNo" placeholder="Phone Number*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.controls.phoneNo.errors?.minlength">
+          Phone number should be of minimum 10 digits !!!
+        </mat-error>
+      </div>
+      <div>
+        <button mat-button mat-raised-button type="submit" color="primary" [disabled]="newContactForm.invalid">Submit</button>
+      </div>
+    </form>
   </mat-card-content>
 </mat-card>
