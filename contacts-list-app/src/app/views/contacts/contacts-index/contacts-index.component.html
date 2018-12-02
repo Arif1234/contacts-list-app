@@ -1,3 +1,8 @@
 <h2>Contact List</h2>
 
-<app-contact-list [data]="contactsData"></app-contact-list>
+<app-contact-list 
+  [data]="contactsData" 
+  (show)="showContact($event)"
+  (remove)="deleteContact($event)"
+  (edit)="editContact($event)">
+</app-contact-list>

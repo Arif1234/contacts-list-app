@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppMaterialModule } from './app-material.module';
@@ -21,7 +22,8 @@ import { ContactDetailComponent } from '@components/contact-detail/contact-detai
     CommonModule,
     AppMaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

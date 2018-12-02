@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '@models/contact.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-details',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  editContact(contact: Contact) {
+    this.router.navigate(['/contacts', contact.id, 'edit']);
+
+  }
+
+  deleteContact(contact: Contact) {
+    alert('Contact ' + contact.id + ' Deleted');
   }
 
 }

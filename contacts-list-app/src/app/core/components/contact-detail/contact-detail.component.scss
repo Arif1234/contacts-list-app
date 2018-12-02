@@ -1,0 +1,28 @@
+.contact-detail {
+    padding-top: 25px;
+
+    span {
+        background: #3f51b5;
+        color: #ffffff;
+        transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+        display: inline-flex;
+        padding: 0 12px;
+        border-radius: 16px;
+        align-items: center;
+        cursor: default;
+        min-height: 32px;
+        height: 1px;
+    }
+
+    .blue {
+        border-color: blue;
+    }
+
+    .yellow {
+        border-color: yellow;
+    }
+
+    .red {
+        border-color: red;
+    }
+}

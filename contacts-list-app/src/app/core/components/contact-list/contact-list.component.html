@@ -39,10 +39,10 @@
     <!-- Buttons -->
     <ng-container matColumnDef="buttons">
       <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let element"> 
-        <button class="blue" mat-button mat-stroked-button>Details</button>
-        <button class="yellow" mat-button mat-stroked-button>Edit</button>
-        <button class="red" mat-button mat-stroked-button>Delete</button>
+      <td mat-cell *matCellDef="let element" class="action-buttons"> 
+        <button class="blue" mat-button mat-stroked-button (click)="showDetails(element)">Details</button>
+        <button class="yellow" mat-button mat-stroked-button (click)="editContact(element)">Edit</button>
+        <button class="red" mat-button mat-stroked-button (click)="deleteContact(element)">Delete</button>
       </td>
     </ng-container>
   

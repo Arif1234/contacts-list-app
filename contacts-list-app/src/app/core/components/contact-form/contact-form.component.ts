@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, OnChanges } from '@angular/core';
+import { Contact } from '@models/contact.interface';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -6,18 +7,33 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent implements OnInit, OnChanges {
   public newContactForm: FormGroup;
+  @Input() contact: Contact = {
+    id: undefined,
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: undefined
+  };
+
+  @Output() save = new EventEmitter<Contact>();
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.newContactForm = this.fb.group({
-      fname: ['Tasleem', Validators.required],
-      lname: ['Arif', Validators.required],
-      email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
-      phoneNo: ['', [Validators.required, Validators.minLength(10)]]
+      fname: [this.contact.firstName, Validators.required],
+      lname: [this.contact.lastName, Validators.required],
+      email: [this.contact.email, [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
+      phoneNo: [this.contact.phoneNumber, [Validators.required, Validators.minLength(10)]]
     });
+  }
+
+  ngOnChanges() {
+    if (this.contact) {
+      this.newContactForm.patchValue({...this.contact});
+    }
   }
 
   onSubmit(form: FormGroup) {
@@ -26,5 +42,9 @@ export class ContactFormComponent implements OnInit {
     console.log('Last Name', form.value.lname);
     console.log('Email', form.value.email);
     console.log('Phone Number', form.value.phoneNo);
+
+    if (this.newContactForm.valid) {
+      this.save.emit(this.newContactForm.value);
+    }
   }
 }

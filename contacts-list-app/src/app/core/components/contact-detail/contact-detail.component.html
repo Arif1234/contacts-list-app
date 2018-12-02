@@ -1,3 +1,20 @@
-<p>
-  contact-detail works!
-</p>
+<div *ngIf="contact; else notFound" class="contact-detail">
+  <mat-card>
+      <mat-card-title>Contact</mat-card-title>
+      <mat-card-content>
+        <p>First Name : <span>{{contact.firstName}}</span></p>
+        <p>Last Name : <span>{{contact.lastName}}</span></p>
+        <p>Email : <span>{{contact.email}}</span></p>
+        <p>Phone Number : <span>{{contact.phoneNumber}}</span></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="yellow" mat-button mat-stroked-button (click)="edit.emit(contact)">EDIT</button>
+        <button class="red" mat-button mat-stroked-button (click)="remove.emit(contact)">DELETE</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #notFound>
+  <span>Record not found for the person.</span>
+</ng-template>
+
