@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    baseUrl: 'http://localhost:3002'
+    baseUrl: 'https://my-json-server.typicode.com/Arif1234/arifdb'
   }
 };
 

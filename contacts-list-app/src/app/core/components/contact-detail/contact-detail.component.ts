@@ -1,14 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ContactsService } from '@services/contacts.service';
 import { Contact } from '@models/contact.interface';
-
-const data: Contact = {
-  id: 23,
-  firstName: 'John',
-  lastName: 'Arthur',
-  email: 'john@gmail.com',
-  phoneNumber: 121212121,
-  status: 'Active'
-};
 
 @Component({
   selector: 'app-contact-detail-container',
@@ -16,13 +9,16 @@ const data: Contact = {
   styleUrls: ['./contact-detail.component.scss']
 })
 export class ContactDetailComponent implements OnInit {
-  @Input() contact: Contact;
+  public contactID;
+  public contact: Contact;
   @Output() edit = new EventEmitter<Contact>();
   @Output() remove = new EventEmitter<Contact>();
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private contactsService: ContactsService) {
+    this.route.params.forEach(contact => this.contactID = contact.contactId);
+   }
 
   ngOnInit() {
-    this.contact = data;
+    this.contactsService.getContactDetailById(this.contactID).subscribe(data => this.contact = data);
   }
 }

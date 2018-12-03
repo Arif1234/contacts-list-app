@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   api: {
-    baseUrl: 'http://api.example.com'
+    baseUrl: 'https://my-json-server.typicode.com/Arif1234/arifdb'
   }
 };
