@@ -35,7 +35,7 @@ export class ContactListComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Contact>(this._data);
     this.displayedColumns = ['id', 'firstName', 'lastName', 'email', 'phoneNumber', 'status', 'buttons'];
     // setTimeout(() => this.dataSource.paginator = this.paginator);
-    // this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
   }
 
   public showDetails(contact: Contact) {

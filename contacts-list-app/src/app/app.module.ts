@@ -5,6 +5,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppMaterialModule } from '@modules/app-material.module';
+import { ToastrModule } from 'ngx-toastr';
 
 // User defined modules.
 import { SharedModule } from '@modules/shared.module';
@@ -24,6 +25,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppMaterialModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule

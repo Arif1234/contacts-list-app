@@ -4,17 +4,17 @@
     <form [formGroup]="newContactForm" (ngSubmit)="onSubmit(newContactForm)">
       <div class="form-element-container">
         <mat-form-field>
-          <input matInput formControlName="fname" placeholder="First Name*">
+          <input matInput formControlName="firstName" placeholder="First Name*">
         </mat-form-field>
-        <mat-error *ngIf="newContactForm.get('fname').hasError('required')">
+        <mat-error *ngIf="newContactForm.get('firstName').hasError('required')">
           Please provide first name !!!
         </mat-error>
       </div>
       <div class="form-element-container">
         <mat-form-field>
-          <input matInput formControlName="lname" placeholder="Last Name*">
+          <input matInput formControlName="lastName" placeholder="Last Name*">
         </mat-form-field>
-        <mat-error *ngIf="newContactForm.get('lname').hasError('required')">
+        <mat-error *ngIf="newContactForm.get('lastName').hasError('required')">
           Please provide last name !!!
         </mat-error>
       </div>
@@ -28,16 +28,16 @@
       </div>
       <div class="form-element-container">
         <mat-form-field>
-          <input matInput formControlName="phoneNo" placeholder="Phone Number*">
+          <input matInput formControlName="phoneNumber" placeholder="Phone Number*">
         </mat-form-field>
-        <mat-error *ngIf="newContactForm.controls.phoneNo.errors?.minlength">
+        <mat-error *ngIf="newContactForm.controls.phoneNumber.errors?.minlength">
           Phone number should be of minimum 10 digits !!!
         </mat-error>
       </div>
       <div>
         <h4>Select status for the contact*</h4>
         <mat-form-field>
-          <mat-select [(value)]="status">
+          <mat-select (selectionChange)="onChange($event)" [(value)]="status">
             <mat-option value="active">Active</mat-option>
             <mat-option value="inactive">Inactive</mat-option>
           </mat-select>

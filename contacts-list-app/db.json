@@ -121,26 +121,12 @@
       "status": "Inactive"
     },
     {
-      "fname": "Tasleem",
-      "lname": "Arif",
+      "firstName": "Tasleem",
+      "lastName": "Arif",
       "email": "mdtasleemarif@gmail.com",
-      "phoneNo": "8237779449",
+      "phoneNumber": "8237779449",
+      "status": "Active",
       "id": 36
-    },
-    {
-      "fname": "Tasleem 2",
-      "lname": "Arif 2",
-      "email": "mdtasleemarif2@gmail.com",
-      "phoneNo": "8237779448",
-      "id": 37
-    },
-    {
-      "fname": "Tasleem3",
-      "lname": "Arif 3",
-      "email": "mdtasleemarif@gmail.com",
-      "phoneNo": "8237779443",
-      "status": "active",
-      "id": 38
     }
   ]
 }

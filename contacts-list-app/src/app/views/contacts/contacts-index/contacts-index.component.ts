@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Contact } from '@models/contact.interface';
 import { ContactsService } from '@services/contacts.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contacts-index',
@@ -14,7 +15,7 @@ export class ContactsIndexComponent implements OnInit {
   constructor(
     private contactsService: ContactsService,
     private router: Router,
-    private actR: ActivatedRoute
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -39,9 +40,14 @@ export class ContactsIndexComponent implements OnInit {
       alert('Contact ' + contact.id + ' Deleted');
       this.contactsService.deleteContactDetail(contact.id)
         .subscribe(
-          (res) => alert(`${res} is deleted !!!`),
+          (res) => {
+            this.toastr.success('Contact was deleted successfully !!!');
+            console.log(`${res} is deleted !!!`);
+            window.location.reload();
+          },
           (error) => {
             console.log('Error', error);
+            this.toastr.error('Error deleting contact details !!!');
           }
         );
     }
