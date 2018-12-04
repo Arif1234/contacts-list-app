@@ -37,9 +37,9 @@
       <div>
         <h4>Select status for the contact*</h4>
         <mat-form-field>
-          <mat-select (selectionChange)="onChange($event)" [(value)]="status">
-            <mat-option value="active">Active</mat-option>
-            <mat-option value="inactive">Inactive</mat-option>
+          <mat-select [(value)]="selected">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

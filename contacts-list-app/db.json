@@ -127,6 +127,14 @@
       "phoneNumber": "8237779449",
       "status": "Active",
       "id": 36
+    },
+    {
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "email": "peter@gmail.com",
+      "phoneNumber": 1234567891,
+      "status": "Inactive",
+      "id": 37
     }
   ]
 }

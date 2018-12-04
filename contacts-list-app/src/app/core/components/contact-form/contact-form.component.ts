@@ -12,8 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactFormComponent implements OnInit {
   public newContactForm: FormGroup;
-  public status = 'Active';
-  @Input() contact;
+  public selected = 'Active';
 
   @Output() save = new EventEmitter<Contact>();
 
@@ -25,34 +24,17 @@ export class ContactFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.contact) {
-      this.newContactForm = this.fb.group({
-        firstName: [this.contact.firstName, Validators.required],
-        lastName: [this.contact.lastName, Validators.required],
-        email: [this.contact.email, [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
-        phoneNumber: [this.contact.phoneNumber, [Validators.required, Validators.minLength(10)]],
-        status: [this.contact.status, [Validators.required]]
-      });
-    } else {
-      this.newContactForm = this.fb.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
-        phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
-        status: [this.status, [Validators.required]]
-      });
-    }
-  }
-
-  public onChange(e) {
-    if (e.value === 'inactive') {
-      this.status = 'Inactive';
-    }
+    this.newContactForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
+      status: [this.selected, [Validators.required]]
+    });
   }
 
   public onSubmit(form: FormGroup) {
     if (this.newContactForm.valid) {
-      // For adding new contact
       this.contactsService.addContactDetail(this.newContactForm.value)
         .subscribe(
           data => {

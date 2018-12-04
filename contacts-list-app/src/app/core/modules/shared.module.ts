@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from '@components/header/header.component';
 import { FooterComponent } from '@components/footer/footer.component';
+import { ContactEditComponent } from '@components/contact-edit/contact-edit.component';
 import { ContactListComponent } from '@components/contact-list/contact-list.component';
 import { ContactFormComponent } from '@components/contact-form/contact-form.component';
 import { ContactDetailComponent } from '@components/contact-detail/contact-detail.component';
@@ -16,7 +17,8 @@ import { ContactDetailComponent } from '@components/contact-detail/contact-detai
     FooterComponent,
     ContactListComponent,
     ContactFormComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ContactEditComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { ContactDetailComponent } from '@components/contact-detail/contact-detai
     FooterComponent,
     ContactListComponent,
     ContactFormComponent,
-    ContactDetailComponent
+    ContactDetailComponent,
+    ContactEditComponent
   ]
 })
 export class SharedModule { }

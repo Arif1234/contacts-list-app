@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-title>Enter Contact Details</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="newContactForm" (ngSubmit)="onSubmit(newContactForm)">
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="firstName" placeholder="First Name*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.get('firstName').hasError('required')">
+          Please provide first name !!!
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="lastName" placeholder="Last Name*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.get('lastName').hasError('required')">
+          Please provide last name !!!
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.controls.email.hasError('pattern')">
+          Oops, wrong pattern buddy !
+        </mat-error>
+      </div>
+      <div class="form-element-container">
+        <mat-form-field>
+          <input matInput formControlName="phoneNumber" placeholder="Phone Number*">
+        </mat-form-field>
+        <mat-error *ngIf="newContactForm.controls.phoneNumber.errors?.minlength">
+          Phone number should be of minimum 10 digits !!!
+        </mat-error>
+      </div>
+      <div>
+        <h4>Select status for the contact*</h4>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button mat-raised-button type="submit" color="primary" [disabled]="newContactForm.invalid">Submit</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
