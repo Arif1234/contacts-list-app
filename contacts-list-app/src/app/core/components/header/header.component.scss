@@ -1,6 +1,8 @@
+@import '~app/core/common/scss/variables/variables';
+
 header {
     .logo {
-        color: white;
+        color: $white;
         text-decoration: none;
     }
     .header-text {
@@ -8,10 +10,10 @@ header {
     }
 
     ::ng-deep .mat-button-toggle {
-        color: white;
+        color: $white;
     }
 
     .mat-button-toggle-checked {
-        color: black;
+        color: $black;
     }
 }

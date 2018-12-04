@@ -1,3 +1,5 @@
+@import '~app/core/common/scss/variables/variables';
+
 table {
     width: 100%;
 
@@ -10,15 +12,15 @@ table {
     }
 
     .blue {
-        border-color: blue;
+        border-color: $navy;
     }
 
     .yellow {
-        border-color: yellow;
+        border-color: $alert-orange;
     }
 
     .red {
-        border-color: red;
+        border-color: $error-red;
     }
 
     .action-buttons {

@@ -1,0 +1,86 @@
+// Material UI Breakpoints
+// $mat-xs: screen and (max-width: 599px);
+// $mat-sm: screen and (min-width: 600px) and (max-width: 959px);
+// $mat-md: screen and (min-width: 960px) and (max-width: 1279px);
+// $mat-lg: screen and (min-width: 1280px) and (max-width: 1919px);
+// $mat-xl: screen and (min-width: 1920px) and (max-width: 5000px);
+// $mat-lt-sm: screen and (max-width: 599px);
+// $mat-lt-md: screen and (max-width: 959px);
+// $mat-lt-lg: screen and (max-width: 1279px);
+// $mat-lt-xl: screen and (max-width: 1919px);
+// $mat-gt-xs: screen and (min-width: 600px);
+// $mat-gt-sm: screen and (min-width: 960px);
+// $mat-gt-md: screen and (min-width: 1280px);
+// $mat-gt-lg: screen and (min-width: 1920px);
+
+$bp-rules: ('mat-xxs',
+            'mat-xs',
+            'mat-sm',
+            'mat-md',
+            'mat-lg',
+            'mat-xl',
+            'mat-lt-sm',
+            'mat-lt-md',
+            'mat-lt-lg',
+            'mat-lt-xl',
+            'mat-gt-xs',
+            'mat-gt-sm',
+            'mat-gt-md',
+            'mat-gt-lg');
+
+$bp-xxs: 450px;
+$bp-xs: 600px;
+$bp-sm: 960px;
+$bp-md: 1280px;
+$bp-lg: 1920px;
+$bp-xl: 5000px;
+
+@mixin media($rule) {
+    @if index($bp-rules, $rule) {
+        @if $rule == mat-xxs {
+            @media only screen and (max-width: ($bp-xxs - 1)) { @content; }
+        }
+        @if $rule == mat-xs {
+            @media only screen and (max-width: ($bp-xs - 1)) { @content; }
+        }
+        @else if $rule == mat-sm {
+            @media only screen and (min-width: $bp-xs) and (max-width: ($bp-sm - 1)) { @content; }
+        }
+        @else if $rule == mat-md {
+            @media only screen and (min-width: $bp-sm) and (max-width: ($bp-md - 1)) { @content; }
+        }
+        @else if $rule == mat-lg {
+            @media only screen and (min-width: $bp-md) and (max-width: ($bp-lg - 1)) { @content; }
+        }
+        @else if $rule == mat-xl {
+            @media only screen and (min-width: $bp-lg) and (max-width: ($bp-xl - 1)) { @content; }
+        }
+        @else if $rule == mat-lt-sm {
+            @media only screen and (max-width: ($bp-xs - 1)) { @content; }
+        }
+        @else if $rule == mat-lt-md {
+            @media only screen and (max-width: ($bp-sm - 1)) { @content; }
+        }
+        @else if $rule == mat-lt-lg {
+            @media only screen and (max-width: ($bp-md - 1)) { @content; }
+        }
+        @else if $rule == mat-lt-xl {
+            @media only screen and (max-width: ($bp-lg - 1)) { @content; }
+        }
+        @else if $rule == mat-gt-xs {
+            @media only screen and (min-width: $bp-xs) { @content; }
+        }
+        @else if $rule == mat-gt-sm {
+            @media only screen and (min-width: $bp-sm) { @content; }
+        }
+        @else if $rule == mat-gt-md {
+            @media only screen and (min-width: $bp-md) { @content; }
+        }
+        @else if $rule == mat-gt-lg {
+            @media only screen and (min-width: $bp-lg) { @content; }
+        }
+    }
+    @else {
+        @warn 'Unknown `#{$rule}` in $bp-rules when calling mixin media.';
+    }
+}

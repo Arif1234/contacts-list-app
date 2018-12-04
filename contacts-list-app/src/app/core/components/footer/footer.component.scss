@@ -1,5 +1,7 @@
+@import '~app/core/common/scss/variables/variables';
+
 footer {
-    color: #888;
+    color: $stone;
     font-size: 14px;
     margin-top: 20px;
     padding-top: 25px;

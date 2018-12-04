@@ -1,6 +1,11 @@
 {
   "name": "contacts-list-app",
   "version": "0.0.0",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/Arif1234/contacts-list-app",
+    "type": "git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
