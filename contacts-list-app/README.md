@@ -7,7 +7,7 @@ Application to maintain contact list with CRUD operations.
 
 > npm i
 
-> For running application locally.
+> For running application locally:
 
 > ng serve -o
 
@@ -24,5 +24,6 @@ Application to maintain contact list with CRUD operations.
 > To get DB Snapshot
 > Type below command in the terminal where json server is running.
 
-> s + <enter>
+> s + ENTER cmd
+
 > This will generate a snapshot of db at project level directory.
