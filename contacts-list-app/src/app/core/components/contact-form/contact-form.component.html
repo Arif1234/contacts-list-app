@@ -35,6 +35,15 @@
         </mat-error>
       </div>
       <div>
+        <h4>Select status for the contact*</h4>
+        <mat-form-field>
+          <mat-select [(value)]="status">
+            <mat-option value="active">Active</mat-option>
+            <mat-option value="inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
         <button mat-button mat-raised-button type="submit" color="primary" [disabled]="newContactForm.invalid">Submit</button>
       </div>
     </form>

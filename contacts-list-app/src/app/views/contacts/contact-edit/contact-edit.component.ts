@@ -1,14 +1,7 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ContactsService } from '@services/contacts.service';
 import { Contact } from '@models/contact.interface';
-
-const data: Contact = {
-  id: 23,
-  firstName: 'John',
-  lastName: 'Arthur',
-  email: 'john@gmail.com',
-  phoneNumber: 121212121,
-  status: 'Active'
-};
 
 @Component({
   selector: 'app-contact-edit',
@@ -17,11 +10,17 @@ const data: Contact = {
 })
 export class ContactEditComponent implements OnInit {
   public contact: Contact;
+  public contactID;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private contactsService: ContactsService
+  ) {
+    this.route.params.forEach(contact => this.contactID = contact.contactId);
+  }
 
   ngOnInit() {
-    this.contact = data;
+    this.contactsService.getContactDetailById(this.contactID).subscribe(data => this.contact = data);
   }
 
 }

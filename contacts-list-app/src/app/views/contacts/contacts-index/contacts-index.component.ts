@@ -34,6 +34,16 @@ export class ContactsIndexComponent implements OnInit {
   }
 
   deleteContact(contact: Contact) {
-    alert('Contact ' + contact.id + ' Deleted');
+    const r = confirm('Are you sure?');
+    if (r) {
+      alert('Contact ' + contact.id + ' Deleted');
+      this.contactsService.deleteContactDetail(contact.id)
+        .subscribe(
+          (res) => alert(`${res} is deleted !!!`),
+          (error) => {
+            console.log('Error', error);
+          }
+        );
+    }
   }
 }
